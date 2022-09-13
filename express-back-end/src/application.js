@@ -11,6 +11,7 @@ const app = express();
 const db = require("./db");
 
 const users = require("./routes/users");
+const orders = require("./routes/orders");
 const lawyers = require("./routes/lawyers");
 const clients = require("./routes/clients");
 const cases = require("./routes/cases");
@@ -42,6 +43,7 @@ module.exports = function application(ENV) {
   app.use(bodyparser.json());
 
   app.use("/api", users(db));
+  app.use("/api", orders(db));
   app.use("/api", clients(db));
   app.use("/api", lawyers(db));
   app.use("/api", cases(db));
