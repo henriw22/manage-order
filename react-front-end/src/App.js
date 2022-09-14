@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.scss';
 import Approute from './AppRoute';
+import { Container } from '@mui/material';
 
 import {
   BrowserRouter as Router,
@@ -64,7 +65,9 @@ class App extends Component {
       
         <Router>
           <Switch>
-            <Approute exact path="/" component={HomePage}/>
+            <Container maxWidth="false" sx={{padding:"1em", height:"100vh"}}>
+              <Approute exact path="/" component={HomePage} sx={{margin:"100px"}}/>
+            </Container>
             {/* <Approute exact path="/clientRegister" component={clientRegister} />
             <Approute exact path="/lawyerRegister" component={lawyerRegister} />
             <Approute exact path="/lawyerHome" component={LawyerHome} />
