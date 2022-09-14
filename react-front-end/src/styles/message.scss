@@ -1,0 +1,57 @@
+.main-container {
+  background: #264653;
+  border-radius: 10px;
+  padding: 5px 20px;
+  display: flex;
+  max-width: 30%;
+  position: fixed;
+  bottom: 3%;
+  overflow-y:visible;
+  right:0%;
+}
+.card {
+  height: 80px;
+  width: 100px;
+  margin: 16px 4px 0px 4px;
+  background:grey;
+  border-radius: 20px;
+  padding: 5px 20px;
+  color: black;
+  display: inline-block;
+  max-width: 80%;
+}
+.message-box {
+  display: inline-block;
+  height: 270px;
+}
+.message-text {
+  padding: 5% 0;
+  overflow: auto;
+  flex: auto;
+  border-bottom: none;
+  font-family: 'Bitter';
+  // border: solid 2px;
+  background-color: white;
+}
+.title {
+  text-align: center;
+  width: 100%;
+  padding: 2%;
+  background-color: white;
+  color: black;
+  font-family: 'Work Sans';
+  border-bottom: solid 2px;
+}
+
+.bottom {
+  // position: fixed;
+  width: 100%;
+  display: flex;
+  right: 0%; 
+  bottom: 0;
+}
+
+.input-box {
+  bottom: 0;
+}
+

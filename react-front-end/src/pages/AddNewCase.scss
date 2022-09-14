@@ -1,0 +1,43 @@
+.html{
+  width: 110px;
+  background: #fefae0;
+
+}
+.NewCase {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 25px auto;
+  background: #fefae0;
+}
+
+.col-sm-10 {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.submit-form {
+  font-family: 'Work Sans';
+}
+
+.legal-name {
+  font-family: 'Bitter';
+}
+
+.case-title {
+  font-family: 'Bitter';
+}
+
+
+.short-description {
+  font-family: 'Bitter';
+}
+
+.law-field-selection {
+  font-family: 'Bitter';
+}

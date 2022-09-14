@@ -1,0 +1,58 @@
+.lawyer-profile-container {
+  width: 85%;
+  margin: auto;
+  margin-top: 2em;
+}
+
+.heading-container{
+  justify-content:center;
+  // width: 90%;
+  // margin-left: 50px;
+  // margin-right: 50px;
+  // margin-top: 2em;
+  // margin: auto;
+}
+.name-and-profileImage{
+  display: flex;
+  // flex-direction: row;
+  justify-content: space-between;
+  // margin-top: 2em;
+}
+
+.speciality-and-sendMessage{
+  display: flex;
+  // flex-direction: row;
+  justify-content: space-between;
+  margin-top: 2em;
+}
+
+.content-container{
+  justify-items: center;
+  // margin-left: 50px;
+  // margin-right: 50px;
+  margin-top: 2em;
+}
+
+.reviews{
+  margin-top: 2em;
+  
+}
+
+.review-page{
+  border-radius: 10px;
+  background-color: #2a9d8f;
+  color: white;
+  padding: 2px;
+}
+
+.lawyer-name {
+  display: flex;
+  align-items: center;
+}
+
+.messageBtn {
+  border-radius: 10px;
+  background-color: #2a9d8f;
+  color: white;
+  font-weight: bold;
+}

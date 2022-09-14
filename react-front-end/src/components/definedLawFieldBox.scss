@@ -1,0 +1,33 @@
+.field-id {
+  // display: flex;
+  // margin-top: 15px;
+  // margin-left: 350px;
+  width: 75%;
+  margin: auto;
+	height: auto;
+	background: white;
+	border-radius: 10px;
+	box-shadow: 0px 1px 10px 1px rgb(0, 77, 128);
+
+}
+
+.header{
+  margin-top: 40px;
+  padding:8px;
+  margin-left: 20px;
+  font-family: 'Work Sans';
+
+  h5 {
+  margin-top: 25px;
+  padding: 10;
+  color: rgb(69, 109, 135);
+ 
+  
+  }
+}
+
+.field-content{
+  margin:8px;
+  padding: 10px; 
+  font-family: 'Bitter';
+}

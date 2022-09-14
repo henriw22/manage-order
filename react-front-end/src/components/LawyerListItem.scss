@@ -1,0 +1,29 @@
+.LawyerListItem {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 10px auto;
+  padding: 10px;
+  border:  solid 2px;
+  border-radius: 15px;
+  font-family: 'Work Sans';
+}
+
+.lawyerlistitemheader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.lawyerlistitemfooter {
+  display: flex;
+  justify-content: space-between;
+}
+.specialization-text {
+  font-family: 'Bitter';
+  font-size: medium ;
+}
+
+.location-text {
+  font-family: 'Bitter';
+  font-size: medium;
+}
