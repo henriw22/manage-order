@@ -32,7 +32,6 @@ const OrderForm = () => {
             id="standard-number"
             label="Quantity"
             type="number"
-            sx={{ marginTop: '1em' }}
           />
           <FormHelperText></FormHelperText>
         </FormControl>

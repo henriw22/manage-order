@@ -65,7 +65,7 @@ class App extends Component {
       
         <Router>
           <Switch>
-            <Container maxWidth="false" sx={{padding:"1em", height:"100vh"}}>
+            <Container maxWidth="false" sx={{height:"100vh"}}>
               <Approute exact path="/" component={HomePage} sx={{margin:"100px"}}/>
             </Container>
             {/* <Approute exact path="/clientRegister" component={clientRegister} />
