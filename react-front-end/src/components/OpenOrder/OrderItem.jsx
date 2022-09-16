@@ -14,13 +14,17 @@ const OrderItem = () => {
         image="/images/mie_ayam.jpeg"
         alt="Paella dish"
       />
-      <CardContent sx={{paddingBottom: "unset"}}>
+      <CardContent sx={{ paddingBottom: "unset" }}>
         <Typography variant="body2" color="text.secondary">
           Mie Ayam is a common Indonesian dish of seasoned yellow wheat noodles topped with diced chicken meat
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Order This</Button>
+        <Button size="small">
+          <Typography variant="button">
+            Order This
+          </Typography>
+        </Button>
       </CardActions>
     </Card>
   );
