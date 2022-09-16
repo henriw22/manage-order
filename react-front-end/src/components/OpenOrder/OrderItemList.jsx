@@ -4,9 +4,11 @@ import OrderItem from "./OrderItem";
 
 const OrderItemList = () => {
   return (
-    <Stack width="100%" alignItems="center" margin="1em">
+    <Stack width="50%" alignItems="center" margin="1em">
       <h1>Welcome to Open Order</h1>
-      <Stack flexDirection="row">
+      <Stack flexDirection="row" height="100%" flexWrap="wrap">
+        <OrderItem />
+        <OrderItem />
         <OrderItem />
         <OrderItem />
         <OrderItem />

@@ -3,14 +3,14 @@ import { Card, CardHeader, CardMedia, CardContent, Stack, Typography } from '@mu
 
 const OrderItem = () => {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ width: 240, height: 400, margin: 1 }}>
       <CardHeader
         title="Mie Ayam"
         subheader="October 14, 2022"
       />
       <CardMedia
         component="img"
-        height="194"
+        height="160"
         image="/images/mie_ayam.jpeg"
         alt="Paella dish"
       />
