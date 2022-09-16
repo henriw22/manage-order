@@ -27,7 +27,7 @@ const OrderForm = () => {
       <h1>Mie Ayam</h1>
       <Stack marginTop="1em">
         <span>How many would you like to order?</span>
-        <FormControl sx={{ m: 1, minWidth: 120 }}>
+        <FormControl sx={{ m: 1, minWidth: 120, paddingTop: 1 }}>
           <TextField
             id="standard-number"
             label="Quantity"
@@ -38,7 +38,7 @@ const OrderForm = () => {
       </Stack>
       <Stack marginTop="1em">
         <span>Pick Up Location</span>
-        <FormControl sx={{ m: 1, minWidth: 120 }}>
+        <FormControl sx={{ m: 1, minWidth: 120, paddingTop: 1 }}>
           <InputLabel id="demo-simple-select-helper-label">Location</InputLabel>
           <Select
             labelId="demo-simple-select-helper-label"
@@ -59,7 +59,7 @@ const OrderForm = () => {
       </Stack>
       <Stack marginTop="1em">
         <span>Pick Up Time</span>
-        <FormControl sx={{ m: 1, minWidth: 120 }}>
+        <FormControl sx={{ m: 1, minWidth: 120, paddingTop: 1 }}>
           <InputLabel id="demo-simple-select-helper-label">Time</InputLabel>
           <Select
             labelId="demo-simple-select-helper-label"
