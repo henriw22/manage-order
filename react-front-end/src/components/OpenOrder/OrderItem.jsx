@@ -1,5 +1,5 @@
-import React from "react";
-import { Card, CardHeader, CardMedia, CardContent, Stack, Typography } from '@mui/material';
+import React, { useState } from "react";
+import { Card, CardHeader, CardMedia, CardContent, CardActions, Button, Typography } from '@mui/material';
 
 const OrderItem = () => {
   return (
@@ -14,11 +14,14 @@ const OrderItem = () => {
         image="/images/mie_ayam.jpeg"
         alt="Paella dish"
       />
-      <CardContent>
+      <CardContent sx={{paddingBottom: "unset"}}>
         <Typography variant="body2" color="text.secondary">
-          Mie Ayam is a common Indonesian dish of seasoned yellow wheat noodles topped with diced chicken meat (ayam).
+          Mie Ayam is a common Indonesian dish of seasoned yellow wheat noodles topped with diced chicken meat
         </Typography>
       </CardContent>
+      <CardActions>
+        <Button size="small">Order This</Button>
+      </CardActions>
     </Card>
   );
 };

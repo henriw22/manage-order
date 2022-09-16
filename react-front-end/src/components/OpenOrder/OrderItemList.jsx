@@ -8,10 +8,6 @@ const OrderItemList = () => {
       <h1>Welcome to Open Order</h1>
       <Stack flexDirection="row" height="100%" flexWrap="wrap">
         <OrderItem />
-        <OrderItem />
-        <OrderItem />
-        <OrderItem />
-        <OrderItem />
       </Stack>
     </Stack>
   );
