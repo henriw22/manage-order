@@ -99,9 +99,9 @@ const OrderForm = (props) => {
         </DialogContentText>
       </DialogContent>
       <DialogActions>
-        <Button onClick={handleClose}>Disagree</Button>
+        <Button onClick={handleClose}>Cancel</Button>
         <Button onClick={handleClose} autoFocus>
-          Agree
+          Confirm
         </Button>
       </DialogActions>
     </Dialog>
