@@ -33,6 +33,8 @@ const OrderForm = (props) => {
     <Dialog
       open={open}
       onClose={handleClose}
+      fullWidth={true}
+      maxWidth="sm"
       aria-labelledby="alert-dialog-title"
       aria-describedby="alert-dialog-description"
     >
