@@ -37,11 +37,10 @@ const OrderForm = (props) => {
       maxWidth="sm"
       aria-labelledby="alert-dialog-title"
       aria-describedby="alert-dialog-description"
-      BackdropProps={{ style: { backgroundColor: "transparent" }}}
-      PaperProps={{width: '50%'}}
-      sx={{
-        ".MuiDialog-container": {width: '50%', height: '80%'},
-      }}
+      // BackdropProps={{ style: { backgroundColor: "transparent" }}}
+      // sx={{
+      //   ".MuiDialog-container": {width: '50%', height: '80%'},
+      // }}
     >
       <DialogTitle id="alert-dialog-title">
         Mie Ayam

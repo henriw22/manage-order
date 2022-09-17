@@ -6,11 +6,6 @@ import {
   CardMedia, 
   CardContent, 
   CardActions,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogContentText,
-  DialogTitle,
   Typography 
 } from '@mui/material';
 import OrderForm from "./OrderForm";
