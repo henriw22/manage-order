@@ -10,6 +10,27 @@ CREATE TABLE users (
   password VARCHAR(255) NOT NULL
 );
 
+-- CREATE TABLE order_items (
+--   id SERIAL PRIMARY KEY NOT NULL,
+--   name VARCHAR(255) NOT NULL,
+--   description VARCHAR(255) NOT NULL,
+--   img_url VARCHAR(255) NOT NULL,
+--   created_at TIMESTAMP,
+--   order_date TIMESTAMP
+-- );
+
+-- CREATE TABLE locations (
+--   id SERIAL PRIMARY KEY NOT NULL,
+--   item_id INTEGER REFERENCES order_items(id) ON DELETE CASCADE,
+--   name VARCHAR(255) NOT NULL
+-- );
+
+-- CREATE TABLE time (
+--   id SERIAL PRIMARY KEY NOT NULL,
+--   item_id INTEGER REFERENCES order_items(id) ON DELETE CASCADE,
+--   time TIMESTAMP
+-- );
+
 CREATE TABLE orders (
   id SERIAL PRIMARY KEY NOT NULL,
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
