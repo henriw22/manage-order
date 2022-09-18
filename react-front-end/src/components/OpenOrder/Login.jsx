@@ -15,10 +15,10 @@ const Login = () => {
   return (
     <Stack width="50%" padding="2em" margin="1em" border="1px solid" borderRadius="10px">
       <Stack alignItems="center">
-        <Avatar sx={{ bgcolor: 'red', marginTop: '1em' }}>
+        <Avatar sx={{ bgcolor: 'red', margin:'0.5em'}}>
           <LockOpenIcon />
         </Avatar>
-        <Typography marginTop="0.5em">
+        <Typography>
           Login
         </Typography>
       </Stack>
