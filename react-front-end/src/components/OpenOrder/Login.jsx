@@ -1,25 +1,28 @@
 import React from "react";
-import { 
-  Avatar, 
-  Stack, 
-  FormControl, 
-  FormHelperText, 
-  TextField, 
-  Button, 
-  Typography 
+import {
+  Avatar,
+  Stack,
+  FormControl,
+  FormHelperText,
+  TextField,
+  Button,
+  Typography
 } from '@mui/material';
 import LockOpenIcon from '@mui/icons-material/LockOpen';
 
 
 const Login = () => {
   return (
-    <Stack width="50%">
+    <Stack width="50%" padding="2em" margin="1em" border="1px solid" borderRadius="10px">
       <Stack alignItems="center">
-      <Avatar>
-        <LockOpenIcon />
-      </Avatar>
+        <Avatar sx={{ bgcolor: 'red', marginTop: '1em' }}>
+          <LockOpenIcon />
+        </Avatar>
+        <Typography marginTop="0.5em">
+          Login
+        </Typography>
       </Stack>
-      <Stack>
+      <Stack marginTop="1em">
         <FormControl sx={{ minWidth: 120, paddingTop: 1 }}>
           <TextField
             id="outlined-email-input"
@@ -44,9 +47,12 @@ const Login = () => {
       <Button variant="contained" sx={{ marginTop: '2em' }}>
         SIGN IN
       </Button>
-      <Typography variant="subtitle1" color="primary" marginTop="0.5em">
+      <Typography variant="subtitle1" color="primary" marginTop="0.5em" onClick={() => console.log('test')}>
         Don't have an account? Sign Up
       </Typography>
+      {/* <Button>
+      Don't have an account? Sign Up
+      </Button> */}
     </Stack>
   );
 };
