@@ -1,12 +1,24 @@
 import React from "react";
-import { Avatar, Stack, FormControl, FormHelperText, TextField, Button, Typography } from '@mui/material';
+import { 
+  Avatar, 
+  Stack, 
+  FormControl, 
+  FormHelperText, 
+  TextField, 
+  Button, 
+  Typography 
+} from '@mui/material';
+import LockOpenIcon from '@mui/icons-material/LockOpen';
+
 
 const Login = () => {
   return (
     <Stack width="50%">
+      <Stack alignItems="center">
       <Avatar>
-      
+        <LockOpenIcon />
       </Avatar>
+      </Stack>
       <Stack>
         <FormControl sx={{ minWidth: 120, paddingTop: 1 }}>
           <TextField
