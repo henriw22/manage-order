@@ -15,6 +15,7 @@ CREATE TABLE users (
 --   name VARCHAR(255) NOT NULL,
 --   description VARCHAR(255) NOT NULL,
 --   img_url VARCHAR(255) NOT NULL,
+--   order_quantity INTEGER  NOT NULL DEFAULT 1,
 --   created_at TIMESTAMP,
 --   order_date TIMESTAMP
 -- );

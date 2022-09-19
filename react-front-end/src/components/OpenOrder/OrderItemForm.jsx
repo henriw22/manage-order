@@ -18,7 +18,7 @@ const OrderItemForm = () => {
         <Avatar sx={{ bgcolor: 'green', margin: '0.5em' }} variant="rounded">
           <Assignment />
         </Avatar>
-        <Typography>
+        <Typography variant="h4">
           Create an Order
         </Typography>
       </Stack>
@@ -28,6 +28,17 @@ const OrderItemForm = () => {
             id="outlined-name-input"
             label="Item Name"
             type="name"
+            InputLabelProps={{ shrink: true }}
+          />
+          <FormHelperText></FormHelperText>
+        </FormControl>
+      </Stack>
+      <Stack>
+        <FormControl sx={{ minWidth: 120, paddingTop: 2 }}>
+          <TextField
+            id="outlined-quantity-input"
+            label="Item Quantity"
+            type="number"
             InputLabelProps={{ shrink: true }}
           />
           <FormHelperText></FormHelperText>
@@ -51,7 +62,7 @@ const OrderItemForm = () => {
             label="Location"
             type="text"
             InputLabelProps={{ shrink: true }}
-            sx={{flexGrow: '0.9'}}
+            sx={{ flexGrow: '0.9' }}
           />
           {/* <FormHelperText sx={{ marginRight: 'unset' }}></FormHelperText> */}
           <TextField
@@ -77,26 +88,21 @@ const OrderItemForm = () => {
           <input type="file" hidden />
         </Button>
       </Stack>
-      <Stack>
+      <Stack marginTop="1em">
         <FormControl sx={{ minWidth: 120, paddingTop: 2 }}>
           <TextField
-            id="outlined-name-input"
+            id="outlined-multiline-static"
             label="Description"
-            type="text"
+            multiline
+            rows={4}
             InputLabelProps={{ shrink: true }}
           />
-          <FormHelperText></FormHelperText>
+          <FormHelperText sx={{marginLeft: 'unset'}}>Maximum 255 characters</FormHelperText>
         </FormControl>
       </Stack>
       <Button variant="contained" sx={{ marginTop: '2em' }}>
         CREATE ORDER
       </Button>
-      <Typography variant="subtitle1" color="primary" marginTop="0.5em" onClick={() => console.log('test')}>
-        Don't have an account? Sign Up
-      </Typography>
-      {/* <Button>
-      Don't have an account? Sign Up
-      </Button> */}
     </Stack>
   );
 };
