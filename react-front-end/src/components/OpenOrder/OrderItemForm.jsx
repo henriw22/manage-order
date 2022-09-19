@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {
   Avatar,
   Stack,
@@ -12,6 +12,17 @@ import Assignment from '@mui/icons-material/Assignment';
 
 
 const OrderItemForm = () => {
+  const [name, setName] = useState('');
+  const [quantity, setQuantity] = useState('');
+
+  const handleNameChange = (event) => {
+    setName(event.target.value);
+  }
+  const handleQuantityChange = (event) => {
+    setQuantity(event.target.value);
+  }
+  console.log(quantity);
+
   return (
     <Stack width="75%" padding="2em" margin="1em" border="1px solid" borderRadius="10px">
       <Stack alignItems="center">
@@ -29,6 +40,7 @@ const OrderItemForm = () => {
             label="Item Name"
             type="name"
             InputLabelProps={{ shrink: true }}
+            onChange={handleNameChange}
           />
           <FormHelperText></FormHelperText>
         </FormControl>
@@ -40,6 +52,7 @@ const OrderItemForm = () => {
             label="Item Quantity"
             type="number"
             InputLabelProps={{ shrink: true }}
+            onChange={handleQuantityChange}
           />
           <FormHelperText></FormHelperText>
         </FormControl>
