@@ -13,9 +13,10 @@ CREATE TABLE users (
 -- CREATE TABLE order_items (
 --   id SERIAL PRIMARY KEY NOT NULL,
 --   name VARCHAR(255) NOT NULL,
+--   price INTEGER  NOT NULL DEFAULT 1,
+--   order_quantity INTEGER  NOT NULL DEFAULT 1,
 --   description VARCHAR(255) NOT NULL,
 --   img_url VARCHAR(255) NOT NULL,
---   order_quantity INTEGER  NOT NULL DEFAULT 1,
 --   created_at TIMESTAMP,
 --   order_date TIMESTAMP
 -- );

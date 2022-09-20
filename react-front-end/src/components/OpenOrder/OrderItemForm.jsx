@@ -1,9 +1,12 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import {
   Avatar,
   Stack,
   FormControl,
   FormHelperText,
+  InputLabel,
+  InputAdornment,
+  OutlinedInput,
   TextField,
   Button,
   Typography
@@ -46,15 +49,21 @@ const OrderItemForm = () => {
         </FormControl>
       </Stack>
       <Stack>
-        <FormControl sx={{ minWidth: 120, paddingTop: 2 }}>
+        <FormControl sx={{ minWidth: 120, marginTop: 2, flexDirection: 'row', justifyContent: 'space-between' }}>
+        <InputLabel htmlFor="outlined-adornment-price">Price</InputLabel>
+          <OutlinedInput
+            id="outlined-adornment-price"
+            startAdornment={<InputAdornment position="start">$</InputAdornment>}
+            label="Price"
+          />
           <TextField
             id="outlined-quantity-input"
             label="Item Quantity"
             type="number"
             InputLabelProps={{ shrink: true }}
             onChange={handleQuantityChange}
+            sx={{ flexGrow: 0.5 }}
           />
-          <FormHelperText></FormHelperText>
         </FormControl>
       </Stack>
       <Stack>
@@ -110,7 +119,7 @@ const OrderItemForm = () => {
             rows={4}
             InputLabelProps={{ shrink: true }}
           />
-          <FormHelperText sx={{marginLeft: 'unset'}}>Maximum 255 characters</FormHelperText>
+          <FormHelperText sx={{ marginLeft: 'unset' }}>Maximum 255 characters</FormHelperText>
         </FormControl>
       </Stack>
       <Button variant="contained" sx={{ marginTop: '2em' }}>
