@@ -17,6 +17,11 @@ import Assignment from '@mui/icons-material/Assignment';
 const OrderItemForm = () => {
   const [name, setName] = useState('');
   const [quantity, setQuantity] = useState('');
+  const [price, setPrice] = useState('');
+  const [date, setDate] = useState('');
+  const [location, setLocation] = useState('');
+  const [img, setImg] = useState('');
+  const [description, setDescription] = useState('');
 
   const handleNameChange = (event) => {
     setName(event.target.value);
@@ -24,6 +29,22 @@ const OrderItemForm = () => {
   const handleQuantityChange = (event) => {
     setQuantity(event.target.value);
   }
+  const handlePriceChange = (event) => {
+    setPrice(event.target.value);
+  }
+  const handleDateChange = (event) => {
+    setDate(event.target.value);
+  }
+  const handleLocationChange = (event) => {
+    setLocation(event.target.value);
+  }
+  const handleImgChange = (event) => {
+    setImg(event.target.value);
+  }
+  const handleDescriptionChange = (event) => {
+    setDescription(event.target.value);
+  }
+
   console.log(quantity);
 
   return (
@@ -55,6 +76,7 @@ const OrderItemForm = () => {
             id="outlined-adornment-price"
             startAdornment={<InputAdornment position="start">$</InputAdornment>}
             label="Price"
+            onChange={handlePriceChange}
           />
           <TextField
             id="outlined-quantity-input"
@@ -73,6 +95,7 @@ const OrderItemForm = () => {
             label="Order Date"
             type="date"
             InputLabelProps={{ shrink: true }}
+            onChange={handleDateChange}
           />
           <FormHelperText></FormHelperText>
         </FormControl>
@@ -85,6 +108,7 @@ const OrderItemForm = () => {
             type="text"
             InputLabelProps={{ shrink: true }}
             sx={{ flexGrow: '0.9' }}
+            onChange={handleLocationChange}
           />
           {/* <FormHelperText sx={{ marginRight: 'unset' }}></FormHelperText> */}
           <TextField
@@ -102,6 +126,7 @@ const OrderItemForm = () => {
             label="Image"
             type="url"
             InputLabelProps={{ shrink: true }}
+            onChange={handleImgChange}
           />
           <FormHelperText></FormHelperText>
         </FormControl>
@@ -116,8 +141,9 @@ const OrderItemForm = () => {
             id="outlined-multiline-static"
             label="Description"
             multiline
-            rows={4}
+            rows={3}
             InputLabelProps={{ shrink: true }}
+            onChange={handleDescriptionChange}
           />
           <FormHelperText sx={{ marginLeft: 'unset' }}>Maximum 255 characters</FormHelperText>
         </FormControl>
