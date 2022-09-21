@@ -1,4 +1,5 @@
 DROP TABLE IF EXISTS orders CASCADE;
+DROP TABLE IF EXISTS order_items CASCADE;
 DROP TABLE IF EXISTS users CASCADE;
 
 
@@ -10,16 +11,16 @@ CREATE TABLE users (
   password VARCHAR(255) NOT NULL
 );
 
--- CREATE TABLE order_items (
---   id SERIAL PRIMARY KEY NOT NULL,
---   name VARCHAR(255) NOT NULL,
---   price INTEGER  NOT NULL DEFAULT 1,
---   order_quantity INTEGER  NOT NULL DEFAULT 1,
---   description VARCHAR(255) NOT NULL,
---   img_url VARCHAR(255) NOT NULL,
---   created_at TIMESTAMP,
---   order_date TIMESTAMP
--- );
+CREATE TABLE order_items (
+  id SERIAL PRIMARY KEY NOT NULL,
+  name VARCHAR(255) NOT NULL,
+  price INTEGER  NOT NULL DEFAULT 1,
+  order_quantity INTEGER  NOT NULL DEFAULT 1,
+  description VARCHAR(255) NOT NULL,
+  img_url VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP,
+  order_date TIMESTAMP
+);
 
 -- CREATE TABLE locations (
 --   id SERIAL PRIMARY KEY NOT NULL,

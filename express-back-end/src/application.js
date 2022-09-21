@@ -12,6 +12,7 @@ const db = require("./db");
 
 const users = require("./routes/users");
 const orders = require("./routes/orders");
+const orderItems = require("./routes/order_items");
 const lawyers = require("./routes/lawyers");
 const clients = require("./routes/clients");
 const cases = require("./routes/cases");
@@ -44,6 +45,7 @@ module.exports = function application(ENV) {
 
   app.use("/api", users(db));
   app.use("/api", orders(db));
+  app.use("/api", orderItems(db));
   app.use("/api", clients(db));
   app.use("/api", lawyers(db));
   app.use("/api", cases(db));
