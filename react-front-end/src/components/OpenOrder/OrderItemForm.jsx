@@ -95,8 +95,8 @@ const OrderItemForm = () => {
           />
         </FormControl>
       </Stack>
-      <Stack paddingTop="1em">
-        {/* <FormControl sx={{ minWidth: 120, paddingTop: 2 }}>
+      <Stack>
+        <FormControl sx={{ minWidth: 120, paddingTop: 2 }}>
           <TextField
             id="outlined-name-input"
             label="Image"
@@ -104,13 +104,13 @@ const OrderItemForm = () => {
             InputLabelProps={{ shrink: true }}
           />
           <FormHelperText></FormHelperText>
-        </FormControl> */}
-        <Button variant="contained" component="label">
+        </FormControl>
+        {/* <Button variant="contained" component="label">
           Upload Image
           <input type="file" hidden />
-        </Button>
+        </Button> */}
       </Stack>
-      <Stack marginTop="1em">
+      <Stack>
         <FormControl sx={{ minWidth: 120, paddingTop: 2 }}>
           <TextField
             id="outlined-multiline-static"
