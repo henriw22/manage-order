@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import { 
-  Button, 
-  Card, 
-  CardHeader, 
-  CardMedia, 
-  CardContent, 
+import {
+  Button,
+  Card,
+  CardHeader,
+  CardMedia,
+  CardContent,
   CardActions,
-  Typography 
+  IconButton,
+  Typography
 } from '@mui/material';
 import OrderForm from "./OrderForm";
 
@@ -26,6 +27,13 @@ const OrderItem = () => {
       <CardHeader
         title="Mie Ayam"
         subheader="October 14, 2022"
+        action={
+          <IconButton aria-label="settings" >
+            <Typography variant="h6" color="green">
+              <strong>$15</strong>
+            </Typography>
+          </IconButton>
+        }
       />
       <CardMedia
         component="img"
