@@ -45,7 +45,9 @@ const OrderItemForm = () => {
     setDescription(event.target.value);
   }
 
-  console.log(quantity);
+  const handleSubmit = () => {
+    console.log(name, quantity, price, date, location, img, description);
+  }
 
   return (
     <Stack width="75%" padding="2em" margin="1em" border="1px solid" borderRadius="10px">
@@ -148,7 +150,7 @@ const OrderItemForm = () => {
           <FormHelperText sx={{ marginLeft: 'unset' }}>Maximum 255 characters</FormHelperText>
         </FormControl>
       </Stack>
-      <Button variant="contained" sx={{ marginTop: '2em' }}>
+      <Button variant="contained" sx={{ marginTop: '2em' }} onClick={handleSubmit}>
         CREATE ORDER
       </Button>
     </Stack>

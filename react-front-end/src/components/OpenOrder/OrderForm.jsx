@@ -37,10 +37,10 @@ const OrderForm = (props) => {
       maxWidth="sm"
       aria-labelledby="alert-dialog-title"
       aria-describedby="alert-dialog-description"
-      // BackdropProps={{ style: { backgroundColor: "transparent" }}}
-      // sx={{
-      //   ".MuiDialog-container": {width: '50%', height: '80%'},
-      // }}
+    // BackdropProps={{ style: { backgroundColor: "transparent" }}}
+    // sx={{
+    //   ".MuiDialog-container": {width: '50%', height: '80%'},
+    // }}
     >
       <DialogTitle id="alert-dialog-title">
         Mie Ayam
@@ -79,7 +79,7 @@ const OrderForm = (props) => {
               <FormHelperText></FormHelperText>
             </FormControl>
           </Stack>
-          <Stack marginTop="1em">
+          {/* <Stack marginTop="1em">
             <span>Pick Up Time</span>
             <FormControl sx={{ m: 1, minWidth: 120, paddingTop: 1 }}>
               <InputLabel id="demo-simple-select-helper-label">Time</InputLabel>
@@ -99,7 +99,7 @@ const OrderForm = (props) => {
               </Select>
               <FormHelperText></FormHelperText>
             </FormControl>
-          </Stack>
+          </Stack> */}
         </DialogContentText>
       </DialogContent>
       <DialogActions>

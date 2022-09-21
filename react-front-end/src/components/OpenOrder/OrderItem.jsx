@@ -39,7 +39,6 @@ const OrderItem = () => {
         component="img"
         height="160"
         image="/images/mie_ayam.jpeg"
-        alt="Paella dish"
       />
       <CardContent sx={{ paddingBottom: "unset" }}>
         <Typography variant="body2" color="text.secondary">

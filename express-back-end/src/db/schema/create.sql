@@ -37,7 +37,6 @@ CREATE TABLE orders (
   id SERIAL PRIMARY KEY NOT NULL,
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   created_at TIMESTAMP,
-  pick_up_time TIMESTAMP,
   quantity INTEGER  NOT NULL DEFAULT 1,
   location VARCHAR(255) NOT NULL
 );
