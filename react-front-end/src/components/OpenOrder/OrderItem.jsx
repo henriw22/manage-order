@@ -23,13 +23,13 @@ const OrderItem = () => {
   };
 
   return (
-    <Card sx={{ width: 240, height: 400, margin: 1 }}>
+    <Card sx={{ width: 240, height: 400, margin: 1, borderRadius: 3 }}>
       <CardHeader
         title="Mie Ayam"
         subheader="October 14, 2022"
         action={
-          <IconButton aria-label="settings" >
-            <Typography variant="h6" color="green">
+          <IconButton aria-label="settings" size="large" sx={{ backgroundColor: "red"}}>
+            <Typography variant="h6" color="white">
               <strong>$15</strong>
             </Typography>
           </IconButton>
