@@ -13,3 +13,9 @@ VALUES
 INSERT INTO order_items (name, price, order_quantity, description, img_url, created_at, order_date)
 VALUES
 ('Mie Ayam', '15', 50, 'Mie Ayam is a common Indonesian dish of seasoned yellow wheat noodles topped with diced chicken meat', '/images/mie_ayam.jpeg', '2022-08-01 10:00:00', '2022-10-01 10:00:00');
+
+INSERT INTO locations (item_id, name)
+VALUES
+(1, 'Lougheed at 2 PM'),
+(1, 'Pick Up at 4 PM'),
+(1, 'Pick Up at 3 PM');
