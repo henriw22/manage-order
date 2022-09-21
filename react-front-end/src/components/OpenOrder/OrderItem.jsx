@@ -11,8 +11,9 @@ import {
 } from '@mui/material';
 import OrderForm from "./OrderForm";
 
-const OrderItem = () => {
+const OrderItem = (props) => {
   const [open, setOpen] = useState(false);
+  const orderItems = props.orderItems;
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -25,12 +26,12 @@ const OrderItem = () => {
   return (
     <Card sx={{ width: 240, height: 400, margin: 1, borderRadius: 3 }}>
       <CardHeader
-        title="Mie Ayam"
-        subheader="October 14, 2022"
+        title={orderItems.name}
+        subheader={orderItems.date}
         action={
           <IconButton aria-label="settings" size="large" sx={{ backgroundColor: "red"}}>
             <Typography variant="h6" color="white">
-              <strong>$15</strong>
+              <strong>${orderItems.price}</strong>
             </Typography>
           </IconButton>
         }
@@ -38,11 +39,11 @@ const OrderItem = () => {
       <CardMedia
         component="img"
         height="160"
-        image="/images/mie_ayam.jpeg"
+        image={orderItems.img_url}
       />
       <CardContent sx={{ paddingBottom: "unset" }}>
         <Typography variant="body2" color="text.secondary">
-          Mie Ayam is a common Indonesian dish of seasoned yellow wheat noodles topped with diced chicken meat
+          {orderItems.description}
         </Typography>
       </CardContent>
       <CardActions>
