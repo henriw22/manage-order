@@ -12,6 +12,7 @@ import {
   Typography
 } from '@mui/material';
 import Assignment from '@mui/icons-material/Assignment';
+import LocationAndTime from "./LocationAndTime";
 
 
 const OrderItemForm = () => {
@@ -20,6 +21,7 @@ const OrderItemForm = () => {
   const [price, setPrice] = useState('');
   const [date, setDate] = useState('');
   const [location, setLocation] = useState('');
+  const [time, setTime] = useState('');
   const [img, setImg] = useState('');
   const [description, setDescription] = useState('');
 
@@ -38,6 +40,9 @@ const OrderItemForm = () => {
   const handleLocationChange = (event) => {
     setLocation(event.target.value);
   }
+  const handleTimeChange = (event) => {
+    setTime(event.target.value);
+  }
   const handleImgChange = (event) => {
     setImg(event.target.value);
   }
@@ -46,7 +51,7 @@ const OrderItemForm = () => {
   }
 
   const handleSubmit = () => {
-    console.log(name, quantity, price, date, location, img, description);
+    console.log(name, quantity, price, date, location, time, img, description);
   }
 
   return (
@@ -103,23 +108,7 @@ const OrderItemForm = () => {
         </FormControl>
       </Stack>
       <Stack>
-        <FormControl sx={{ minWidth: 120, paddingTop: 2, flexDirection: 'row', justifyContent: 'space-between' }}>
-          <TextField
-            id="outlined-name-input"
-            label="Location"
-            type="text"
-            InputLabelProps={{ shrink: true }}
-            sx={{ flexGrow: '0.9' }}
-            onChange={handleLocationChange}
-          />
-          {/* <FormHelperText sx={{ marginRight: 'unset' }}></FormHelperText> */}
-          <TextField
-            id="outlined-name-input"
-            label="Time"
-            type="time"
-            InputLabelProps={{ shrink: true }}
-          />
-        </FormControl>
+        <LocationAndTime handleLocationChange={handleLocationChange} handleTimeChange={handleTimeChange} />
       </Stack>
       <Stack>
         <FormControl sx={{ minWidth: 120, paddingTop: 2 }}>
