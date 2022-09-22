@@ -109,6 +109,9 @@ const OrderItemForm = () => {
       </Stack>
       <Stack>
         <LocationAndTime handleLocationChange={handleLocationChange} handleTimeChange={handleTimeChange} />
+        <Button sx={{margin: 1}}>
+          Add Location
+        </Button>
       </Stack>
       <Stack>
         <FormControl sx={{ minWidth: 120, paddingTop: 2 }}>
