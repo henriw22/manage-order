@@ -78,20 +78,21 @@ const OrderItemForm = () => {
       </Stack>
       <Stack>
         <FormControl sx={{ minWidth: 120, marginTop: 2, flexDirection: 'row', justifyContent: 'space-between' }}>
-        <InputLabel htmlFor="outlined-adornment-price">Price</InputLabel>
-          <OutlinedInput
-            id="outlined-adornment-price"
-            startAdornment={<InputAdornment position="start">$</InputAdornment>}
-            label="Price"
-            onChange={handlePriceChange}
-          />
+          <Stack>
+            <InputLabel htmlFor="outlined-adornment-price">Price</InputLabel>
+            <OutlinedInput
+              id="outlined-adornment-price"
+              startAdornment={<InputAdornment position="start">$</InputAdornment>}
+              label="Price"
+              onChange={handlePriceChange}
+            />
+          </Stack>
           <TextField
             id="outlined-quantity-input"
             label="Item Quantity"
             type="number"
             InputLabelProps={{ shrink: true }}
             onChange={handleQuantityChange}
-            sx={{ flexGrow: 0.5 }}
           />
         </FormControl>
       </Stack>
@@ -109,7 +110,7 @@ const OrderItemForm = () => {
       </Stack>
       <Stack>
         <LocationAndTime handleLocationChange={handleLocationChange} handleTimeChange={handleTimeChange} />
-        <Button sx={{margin: 1}}>
+        <Button sx={{ margin: 1 }}>
           Add Location
         </Button>
       </Stack>
@@ -137,6 +138,7 @@ const OrderItemForm = () => {
             multiline
             rows={3}
             InputLabelProps={{ shrink: true }}
+            inputProps={{ maxLength: 255 }}
             onChange={handleDescriptionChange}
           />
           <FormHelperText sx={{ marginLeft: 'unset' }}>Maximum 255 characters</FormHelperText>
