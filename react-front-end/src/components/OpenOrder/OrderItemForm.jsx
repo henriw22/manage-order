@@ -24,7 +24,24 @@ const OrderItemForm = () => {
   const [time, setTime] = useState('');
   const [img, setImg] = useState('');
   const [description, setDescription] = useState('');
+  const [pickup, setPickup] = useState({location: "", time: ""});
 
+  const handlePickupChange = () => {
+    
+  }
+
+  // const [state, setState] = useState({ name: '' });
+
+  // // const handleInput = (key) => (event) => {
+  // //   setState({ ...state, [key]: event.target.value });
+  // // }
+
+  // onChange={handleNameChange} => onChange={handleInput('name')}
+
+  // const handleInput = (key) => (event) => {
+  //   setState({ ...state, [key]: event.target.value });
+  // }
+  // <input name="...."> =>
   const handleNameChange = (event) => {
     setName(event.target.value);
   }
@@ -150,4 +167,5 @@ const OrderItemForm = () => {
     </Stack>
   );
 };
+
 export default OrderItemForm;
