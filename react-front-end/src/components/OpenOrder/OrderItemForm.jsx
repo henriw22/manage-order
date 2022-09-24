@@ -4,15 +4,18 @@ import {
   Stack,
   FormControl,
   FormHelperText,
+  IconButton,
   InputLabel,
   InputAdornment,
   OutlinedInput,
   TextField,
   Button,
-  Typography
+  Typography,
+  Icon
 } from '@mui/material';
 import Assignment from '@mui/icons-material/Assignment';
 import ClearIcon from '@mui/icons-material/Clear';
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import LocationAndTime from "./LocationAndTime";
 
@@ -141,24 +144,30 @@ const OrderItemForm = () => {
           <FormHelperText></FormHelperText>
         </FormControl>
       </Stack>
-      <Stack>
+      <Stack alignItems="center">
+        <Typography paddingTop="1em">Pick Up Location(s)</Typography>
         {pickup.map((e, i) => (
-          <Stack flexDirection="row" alignItems="center">
+          <Stack flexDirection="row" alignItems="center" width="100%">
             <LocationAndTime handleInputChange={handlePickupChange(i)} />
-            {(i > 0) && 
-            // <Button variant="outlined" color="error" border="unset">
-              <ClearIcon color="error"/>
-            // </Button>
+            {i > 0 ?
+              // <Button variant="outlined" color="error" sx={{border:"unset"}}>
+              <IconButton color="error">
+                <ClearIcon />
+              </IconButton> :
+              <IconButton onClick={addPickupFields} color="success">
+                <AddCircleOutlineIcon />
+              </IconButton>
+              // </Button>
             }
           </Stack>
         ))
         }
         {/* <LocationAndTime handleLocationChange={handleLocationChange} handleTimeChange={handleTimeChange} /> */}
-        <Button sx={{ margin: 1 }} onClick={addPickupFields}>
+        {/* <Button sx={{ margin: 1 }} onClick={addPickupFields}>
           Add Location
-        </Button>
+        </Button> */}
       </Stack>
-      <Stack>
+      <Stack marginTop="1em">
         <FormControl sx={{ minWidth: 120, paddingTop: 2 }}>
           <TextField
             id="outlined-name-input"
