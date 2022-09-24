@@ -151,10 +151,10 @@ const OrderItemForm = () => {
             <LocationAndTime handleInputChange={handlePickupChange(i)} />
             {i > 0 ?
               // <Button variant="outlined" color="error" sx={{border:"unset"}}>
-              <IconButton color="error">
-                <ClearIcon />
+              <IconButton size="small" color="error">
+                <DeleteForeverIcon />
               </IconButton> :
-              <IconButton onClick={addPickupFields} color="success">
+              <IconButton size="small" onClick={addPickupFields} color="success">
                 <AddCircleOutlineIcon />
               </IconButton>
               // </Button>
