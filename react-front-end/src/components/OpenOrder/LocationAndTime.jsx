@@ -6,24 +6,26 @@ import {
 
 
 const LocationAndTime = (props) => {
-  const {handleLocationChange, handleTimeChange} = props;
-  console.log(handleLocationChange);
+  const {handleInputChange} = props;
+
   return (
     <FormControl sx={{ minWidth: 120, paddingTop: 2, flexDirection: 'row', justifyContent: 'space-between' }}>
       <TextField
         id="outlined-name-input"
+        name="location"
         label="Location"
         type="text"
         InputLabelProps={{ shrink: true }}
         sx={{ flexGrow: '0.9' }}
-        onChange={handleLocationChange}
+        onChange={handleInputChange}
       />
       <TextField
         id="outlined-name-input"
+        name="time"
         label="Time"
         type="time"
         InputLabelProps={{ shrink: true }}
-        onChange={handleTimeChange}
+        onChange={handleInputChange}
       />
     </FormControl>
   );

@@ -24,11 +24,25 @@ const OrderItemForm = () => {
   const [time, setTime] = useState('');
   const [img, setImg] = useState('');
   const [description, setDescription] = useState('');
-  const [pickup, setPickup] = useState({location: "", time: ""});
+  const [pickup, setPickup] = useState([{ location: "", time: "" }]);
 
-  const handlePickupChange = () => {
-    
+  const handlePickupChange = (i) => (e) => {
+    let formData = pickup;
+    formData[i][e.target.name] = e.target.value;
+    setPickup({ formData });
   }
+
+  const addPickupFields = () => setPickup([...pickup, { location: "", time: "" }]);
+
+  const removePickupFields = (i) => {
+    let formData = pickup;
+    formData.splice(i, 1);
+    setPickup({ formData })
+  }
+
+  // pickup.map((e, i) => {
+  //   LocationAndTime handleTime = { handlePickupChange(i) }
+  // })
 
   // const [state, setState] = useState({ name: '' });
 
@@ -126,8 +140,12 @@ const OrderItemForm = () => {
         </FormControl>
       </Stack>
       <Stack>
-        <LocationAndTime handleLocationChange={handleLocationChange} handleTimeChange={handleTimeChange} />
-        <Button sx={{ margin: 1 }}>
+        {pickup.map((e, i) => (
+          <LocationAndTime handleInputChange={handlePickupChange(i)} />
+        ))
+        }
+        {/* <LocationAndTime handleLocationChange={handleLocationChange} handleTimeChange={handleTimeChange} /> */}
+        <Button sx={{ margin: 1 }} onClick={addPickupFields}>
           Add Location
         </Button>
       </Stack>
