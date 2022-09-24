@@ -141,7 +141,10 @@ const OrderItemForm = () => {
       </Stack>
       <Stack>
         {pickup.map((e, i) => (
-          <LocationAndTime handleInputChange={handlePickupChange(i)} />
+          <Stack flexDirection="row">
+            <LocationAndTime handleInputChange={handlePickupChange(i)} />
+            {(i > 0) && <Button> Delete </Button>}
+          </Stack>
         ))
         }
         {/* <LocationAndTime handleLocationChange={handleLocationChange} handleTimeChange={handleTimeChange} /> */}

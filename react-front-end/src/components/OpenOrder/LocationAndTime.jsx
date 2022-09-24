@@ -9,7 +9,7 @@ const LocationAndTime = (props) => {
   const {handleInputChange} = props;
 
   return (
-    <FormControl sx={{ minWidth: 120, paddingTop: 2, flexDirection: 'row', justifyContent: 'space-between' }}>
+    <FormControl sx={{ minWidth: 120, paddingTop: 2, flexDirection: 'row', justifyContent: 'space-between', flexGrow: 1 }}>
       <TextField
         id="outlined-name-input"
         name="location"
