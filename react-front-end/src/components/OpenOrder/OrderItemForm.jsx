@@ -12,6 +12,8 @@ import {
   Typography
 } from '@mui/material';
 import Assignment from '@mui/icons-material/Assignment';
+import ClearIcon from '@mui/icons-material/Clear';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import LocationAndTime from "./LocationAndTime";
 
 
@@ -141,9 +143,13 @@ const OrderItemForm = () => {
       </Stack>
       <Stack>
         {pickup.map((e, i) => (
-          <Stack flexDirection="row">
+          <Stack flexDirection="row" alignItems="center">
             <LocationAndTime handleInputChange={handlePickupChange(i)} />
-            {(i > 0) && <Button> Delete </Button>}
+            {(i > 0) && 
+            // <Button variant="outlined" color="error" border="unset">
+              <ClearIcon color="error"/>
+            // </Button>
+            }
           </Stack>
         ))
         }
