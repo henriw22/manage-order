@@ -32,17 +32,22 @@ const OrderItemForm = () => {
   const [pickup, setPickup] = useState([{ location: "", time: "" }]);
 
   const handlePickupChange = (i) => (e) => {
-    let formData = pickup;
+    let formData = [...pickup];
     formData[i][e.target.name] = e.target.value;
-    setPickup({ formData });
+    setPickup(formData);
   }
 
   const addPickupFields = () => setPickup([...pickup, { location: "", time: "" }]);
 
   const removePickupFields = (i) => {
-    let formData = pickup;
+    console.log(i);
+    let formData = [...pickup];
+    console.log(formData);
+    console.log(pickup);
     formData.splice(i, 1);
-    setPickup({ formData })
+    console.log(formData);
+    console.log(pickup);
+    setPickup(formData)
   }
 
   // pickup.map((e, i) => {
@@ -151,7 +156,7 @@ const OrderItemForm = () => {
             <LocationAndTime handleInputChange={handlePickupChange(i)} />
             {i > 0 ?
               // <Button variant="outlined" color="error" sx={{border:"unset"}}>
-              <IconButton size="small" color="error">
+              <IconButton size="small" color="error" onClick={() => removePickupFields(i)}>
                 <DeleteForeverIcon />
               </IconButton> :
               <IconButton size="small" onClick={addPickupFields} color="success">
