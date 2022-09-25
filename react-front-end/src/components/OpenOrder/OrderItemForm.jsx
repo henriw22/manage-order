@@ -25,8 +25,6 @@ const OrderItemForm = () => {
   const [quantity, setQuantity] = useState('');
   const [price, setPrice] = useState('');
   const [date, setDate] = useState('');
-  const [location, setLocation] = useState('');
-  const [time, setTime] = useState('');
   const [img, setImg] = useState('');
   const [description, setDescription] = useState('');
   const [pickup, setPickup] = useState([{ location: "", time: "" }]);
@@ -40,32 +38,11 @@ const OrderItemForm = () => {
   const addPickupFields = () => setPickup([...pickup, { location: "", time: "" }]);
 
   const removePickupFields = (i) => {
-    console.log(i);
     let formData = [...pickup];
-    console.log(formData);
-    console.log(pickup);
     formData.splice(i, 1);
-    console.log(formData);
-    console.log(pickup);
     setPickup(formData)
   }
 
-  // pickup.map((e, i) => {
-  //   LocationAndTime handleTime = { handlePickupChange(i) }
-  // })
-
-  // const [state, setState] = useState({ name: '' });
-
-  // // const handleInput = (key) => (event) => {
-  // //   setState({ ...state, [key]: event.target.value });
-  // // }
-
-  // onChange={handleNameChange} => onChange={handleInput('name')}
-
-  // const handleInput = (key) => (event) => {
-  //   setState({ ...state, [key]: event.target.value });
-  // }
-  // <input name="...."> =>
   const handleNameChange = (event) => {
     setName(event.target.value);
   }
@@ -78,12 +55,6 @@ const OrderItemForm = () => {
   const handleDateChange = (event) => {
     setDate(event.target.value);
   }
-  const handleLocationChange = (event) => {
-    setLocation(event.target.value);
-  }
-  const handleTimeChange = (event) => {
-    setTime(event.target.value);
-  }
   const handleImgChange = (event) => {
     setImg(event.target.value);
   }
@@ -92,7 +63,7 @@ const OrderItemForm = () => {
   }
 
   const handleSubmit = () => {
-    console.log(name, quantity, price, date, location, time, img, description);
+    console.log(name, quantity, price, date, pickup, img, description);
   }
 
   return (
