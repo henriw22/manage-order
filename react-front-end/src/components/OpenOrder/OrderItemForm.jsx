@@ -11,7 +11,7 @@ import {
   TextField,
   Button,
   Typography,
-  Icon
+  Tooltip
 } from '@mui/material';
 import Assignment from '@mui/icons-material/Assignment';
 import ClearIcon from '@mui/icons-material/Clear';
@@ -156,12 +156,16 @@ const OrderItemForm = () => {
             <LocationAndTime handleInputChange={handlePickupChange(i)} />
             {i > 0 ?
               // <Button variant="outlined" color="error" sx={{border:"unset"}}>
-              <IconButton size="small" color="error" onClick={() => removePickupFields(i)}>
-                <DeleteForeverIcon />
-              </IconButton> :
-              <IconButton size="small" onClick={addPickupFields} color="success">
-                <AddCircleOutlineIcon />
-              </IconButton>
+              <Tooltip title="Delete pick up location" placement="right-start">
+                <IconButton size="small" color="error" onClick={() => removePickupFields(i)}>
+                  <DeleteForeverIcon />
+                </IconButton>
+              </Tooltip> :
+              <Tooltip title="Add pick up location" placement="right-start">
+                <IconButton size="small" onClick={addPickupFields} color="success">
+                  <AddCircleOutlineIcon />
+                </IconButton>
+              </Tooltip>
               // </Button>
             }
           </Stack>
