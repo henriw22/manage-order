@@ -6,7 +6,7 @@ import {
 
 
 const LocationAndTime = (props) => {
-  const {handleInputChange} = props;
+  const {handleInputChange, value} = props;
 
   return (
     <FormControl sx={{ minWidth: 120, paddingTop: 2, flexDirection: 'row', justifyContent: 'space-between', flexGrow: 1 }}>
@@ -18,6 +18,7 @@ const LocationAndTime = (props) => {
         InputLabelProps={{ shrink: true }}
         sx={{ flexGrow: '0.9' }}
         onChange={handleInputChange}
+        value={value.location}
       />
       <TextField
         id="outlined-name-input"
@@ -26,6 +27,7 @@ const LocationAndTime = (props) => {
         type="time"
         InputLabelProps={{ shrink: true }}
         onChange={handleInputChange}
+        value={value.time}
       />
     </FormControl>
   );

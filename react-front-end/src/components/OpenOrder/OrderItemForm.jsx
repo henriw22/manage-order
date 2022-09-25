@@ -151,9 +151,9 @@ const OrderItemForm = () => {
       </Stack>
       <Stack alignItems="center">
         <Typography paddingTop="1em">Pick Up Location(s)</Typography>
-        {pickup.map((e, i) => (
-          <Stack flexDirection="row" alignItems="center" width="100%">
-            <LocationAndTime handleInputChange={handlePickupChange(i)} />
+        {pickup.map((pickupValue, i) => (
+          <Stack key={i} flexDirection="row" alignItems="center" width="100%">
+            <LocationAndTime handleInputChange={handlePickupChange(i)} value={pickupValue} />
             {i > 0 ?
               // <Button variant="outlined" color="error" sx={{border:"unset"}}>
               <Tooltip title="Delete pick up location" placement="right-start">
