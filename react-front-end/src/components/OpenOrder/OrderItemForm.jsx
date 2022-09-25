@@ -119,7 +119,7 @@ const OrderItemForm = () => {
       </Stack>
       <Stack>
         <FormControl sx={{ minWidth: 120, marginTop: 2, flexDirection: 'row', justifyContent: 'space-between' }}>
-          <Stack>
+          <Stack width="49%">
             <InputLabel htmlFor="outlined-adornment-price">Price</InputLabel>
             <OutlinedInput
               id="outlined-adornment-price"
@@ -134,6 +134,7 @@ const OrderItemForm = () => {
             type="number"
             InputLabelProps={{ shrink: true }}
             onChange={handleQuantityChange}
+            sx={{ width: '49%' }}
           />
         </FormControl>
       </Stack>
