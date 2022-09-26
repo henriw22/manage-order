@@ -16,18 +16,39 @@ import {
   SelectChangeEvent
 } from '@mui/material';
 
+const axios = require('axios');
+
 const OrderForm = (props) => {
   const { open, handleClose, orderItem } = props;
   const [location, setLocation] = useState('');
+  const [quantity, setQuantity] = useState(1);
   // const [time, setTime] = useState('');
+  console.log(orderItem);
 
   const handleLocationChange = (event: SelectChangeEvent) => {
     setLocation(event.target.value);
   };
 
+  const handleQuantityChange = (event: SelectChangeEvent) => {
+    setQuantity(event.target.value);
+  };
+
   // const handleTimeChange = (event: SelectChangeEvent) => {
   //   setTime(event.target.value);
   // };
+
+  const submitOrder = () => {
+    // console.log(quantity, location);
+    axios.post("/api/orders", {
+      user_id: 1,     // to be changed to user id when login is implemented
+      item_id: orderItem.id,
+      created_at: new Date().toDateString(),
+      quantity: quantity,
+      location: location
+    }).then(response => {
+      console.log('response: ', response);
+    });
+  }
 
   return (
     <Dialog
@@ -54,7 +75,8 @@ const OrderForm = (props) => {
                 id="standard-number"
                 label="Quantity"
                 type="number"
-                InputProps={{ inputProps: { min: 0, max: orderItem.order_quantity} }}
+                InputProps={{ inputProps: { min: 1, max: orderItem.order_quantity} }}
+                onChange={handleQuantityChange}
               />
               <FormHelperText></FormHelperText>
             </FormControl>
@@ -102,7 +124,7 @@ const OrderForm = (props) => {
       </DialogContent>
       <DialogActions>
         <Button onClick={handleClose}>Cancel</Button>
-        <Button onClick={handleClose} autoFocus>
+        <Button onClick={submitOrder} autoFocus>
           Confirm
         </Button>
       </DialogActions>
