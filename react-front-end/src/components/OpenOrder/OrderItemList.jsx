@@ -20,7 +20,7 @@ const OrderItemList = () => {
       <h1>Welcome to Open Order</h1>
       <Stack flexDirection="row" height="100%" flexWrap="wrap">
         {orderItems.map((item) => (
-          <OrderItem orderItems={item}/>
+          <OrderItem orderItem={item}/>
         ))}
       </Stack>
     </Stack>

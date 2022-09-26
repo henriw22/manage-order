@@ -17,7 +17,7 @@ import {
 } from '@mui/material';
 
 const OrderForm = (props) => {
-  const { open, handleClose, quantity, locations } = props;
+  const { open, handleClose, orderItem } = props;
   const [location, setLocation] = useState('');
   // const [time, setTime] = useState('');
 
@@ -54,7 +54,7 @@ const OrderForm = (props) => {
                 id="standard-number"
                 label="Quantity"
                 type="number"
-                InputProps={{ inputProps: { min: 0, max: quantity} }}
+                InputProps={{ inputProps: { min: 0, max: orderItem.order_quantity} }}
               />
               <FormHelperText></FormHelperText>
             </FormControl>
@@ -70,7 +70,7 @@ const OrderForm = (props) => {
                 label="Location"
                 onChange={handleLocationChange}
               >
-                {locations.map((location) => (
+                {orderItem.locations.map((location) => (
                   <MenuItem value={location}>{location}</MenuItem>
                 ))}
               </Select>

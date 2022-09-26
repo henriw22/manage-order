@@ -13,7 +13,7 @@ import OrderForm from "./OrderForm";
 
 const OrderItem = (props) => {
   const [open, setOpen] = useState(false);
-  const orderItems = props.orderItems;
+  const orderItem = props.orderItem;
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -26,12 +26,12 @@ const OrderItem = (props) => {
   return (
     <Card sx={{ width: 240, height: 400, margin: 1, borderRadius: 3 }}>
       <CardHeader
-        title={orderItems.name}
-        subheader={orderItems.date}
+        title={orderItem.name}
+        subheader={orderItem.date}
         action={
           <IconButton aria-label="settings" size="large" sx={{ backgroundColor: "red"}}>
             <Typography variant="h6" color="white">
-              <strong>${orderItems.price}</strong>
+              <strong>${orderItem.price}</strong>
             </Typography>
           </IconButton>
         }
@@ -39,11 +39,11 @@ const OrderItem = (props) => {
       <CardMedia
         component="img"
         height="160"
-        image={orderItems.img_url}
+        image={orderItem.img_url}
       />
       <CardContent sx={{ paddingBottom: "unset" }}>
         <Typography variant="body2" color="text.secondary">
-          {orderItems.description}
+          {orderItem.description}
         </Typography>
       </CardContent>
       <CardActions>
@@ -52,7 +52,7 @@ const OrderItem = (props) => {
             Order This
           </Typography>
         </Button>
-        <OrderForm open={open} handleClose={handleClose} quantity={orderItems.order_quantity} locations={orderItems.locations}/>
+        <OrderForm open={open} handleClose={handleClose} orderItem={orderItem}/>
       </CardActions>
     </Card>
   );
