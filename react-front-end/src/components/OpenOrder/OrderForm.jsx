@@ -17,17 +17,17 @@ import {
 } from '@mui/material';
 
 const OrderForm = (props) => {
-  const { open, handleClose } = props;
+  const { open, handleClose, quantity, locations } = props;
   const [location, setLocation] = useState('');
-  const [time, setTime] = useState('');
+  // const [time, setTime] = useState('');
 
   const handleLocationChange = (event: SelectChangeEvent) => {
     setLocation(event.target.value);
   };
 
-  const handleTimeChange = (event: SelectChangeEvent) => {
-    setTime(event.target.value);
-  };
+  // const handleTimeChange = (event: SelectChangeEvent) => {
+  //   setTime(event.target.value);
+  // };
 
   return (
     <Dialog
@@ -54,6 +54,7 @@ const OrderForm = (props) => {
                 id="standard-number"
                 label="Quantity"
                 type="number"
+                InputProps={{ inputProps: { min: 0, max: quantity} }}
               />
               <FormHelperText></FormHelperText>
             </FormControl>
@@ -69,12 +70,9 @@ const OrderForm = (props) => {
                 label="Location"
                 onChange={handleLocationChange}
               >
-                <MenuItem value="">
-                  <em>Please choose a pick up location</em>
-                </MenuItem>
-                <MenuItem value="Lougheed Mall">Lougheed Mall</MenuItem>
-                <MenuItem value="Metrotown">Metrotown</MenuItem>
-                <MenuItem value="Home">Home</MenuItem>
+                {locations.map((location) => (
+                  <MenuItem value={location}>{location}</MenuItem>
+                ))}
               </Select>
               <FormHelperText></FormHelperText>
             </FormControl>

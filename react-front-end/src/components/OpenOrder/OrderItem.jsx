@@ -52,7 +52,7 @@ const OrderItem = (props) => {
             Order This
           </Typography>
         </Button>
-        <OrderForm open={open} handleClose={handleClose} />
+        <OrderForm open={open} handleClose={handleClose} quantity={orderItems.order_quantity} locations={orderItems.locations}/>
       </CardActions>
     </Card>
   );
