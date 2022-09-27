@@ -24,13 +24,17 @@ module.exports = db => {
       .then((result) => {
         res.status(201).json(result.rows[0]);
         const id = result.rows[0].id;
-        db.query(`
-        INSERT INTO locations (item_id, name)
-        VALUES ($1, $2);
-      `, [id, `${req.body.locations[0].location} at ${req.body.locations[0].time}`])
-          .then(() => {
-            res.status(201).send('successful!');
-          });
+        const locations = req.body.locations;
+
+        locations.map((location) => {
+          db.query(`
+          INSERT INTO locations (item_id, name)
+          VALUES ($1, $2);
+        `, [id, `${location.location} at ${location.time}`])
+            .then(() => {
+              res.status(201).send('successful!');
+            });
+        });
       });
   });
 
