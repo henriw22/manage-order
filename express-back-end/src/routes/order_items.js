@@ -19,10 +19,18 @@ module.exports = db => {
     db.query(`
       INSERT INTO order_items (name, price, order_quantity, description, img_url, created_at, order_date)
       VALUES ($1, $2, $3, $4, $5, $6, $7)
-      RETURNING *;
+      RETURNING id;
     `, [req.body.name, req.body.price, req.body.order_quantity, req.body.description, req.body.img_url, req.body.created_at, req.body.order_date])
       .then((result) => {
         res.status(201).json(result.rows[0]);
+        const id = result.rows[0].id;
+        db.query(`
+        INSERT INTO locations (item_id, name)
+        VALUES ($1, $2);
+      `, [id, `${req.body.locations[0].location} at ${req.body.locations[0].time}`])
+          .then(() => {
+            res.status(201).send('successful!');
+          });
       });
   });
 
