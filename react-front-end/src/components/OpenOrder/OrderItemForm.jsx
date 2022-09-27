@@ -19,6 +19,8 @@ import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import LocationAndTime from "./LocationAndTime";
 
+const axios = require('axios');
+
 
 const OrderItemForm = () => {
   const [name, setName] = useState('');
@@ -64,6 +66,18 @@ const OrderItemForm = () => {
 
   const handleSubmit = () => {
     console.log(name, quantity, price, date, pickup, img, description);
+    axios.post("/api/order_items", {
+      name: name,
+      price: price,
+      order_quantity: quantity,
+      description: description,
+      img_url: img,
+      created_at: new Date().toDateString(),
+      order_date: date,
+      locations: pickup
+    }).then(response => {
+      console.log('response: ', response);
+    });
   }
 
   return (

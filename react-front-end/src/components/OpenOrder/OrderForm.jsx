@@ -92,8 +92,8 @@ const OrderForm = (props) => {
                 label="Location"
                 onChange={handleLocationChange}
               >
-                {orderItem.locations.map((location) => (
-                  <MenuItem value={location}>{location}</MenuItem>
+                {orderItem.locations.map((location, index) => (
+                  <MenuItem key={index} value={location}>{location}</MenuItem>
                 ))}
               </Select>
               <FormHelperText></FormHelperText>
