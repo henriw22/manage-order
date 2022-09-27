@@ -20,9 +20,9 @@ module.exports = db => {
       VALUES ($1, $2, $3, $4, $5)
       RETURNING *;
     `, [req.body.user_id, req.body.item_id, req.body.created_at, req.body.quantity, req.body.location])
-    .then((result) => {
-      res.status(201).json(result.rows[0]);
-    });
+      .then((result) => {
+        res.status(201).json(result.rows[0]);
+      });
   });
 
   return router;
