@@ -47,6 +47,7 @@ const OrderForm = (props) => {
       location: location
     }).then(response => {
       console.log('response: ', response);
+      handleClose();
     });
   }
 
