@@ -14,5 +14,17 @@ module.exports = db => {
     });
   });
 
+  router.post("/order_items", (req, res) => {
+
+    db.query(`
+      INSERT INTO order_items (name, price, order_quantity, description, img_url, created_at, order_date)
+      VALUES ($1, $2, $3, $4, $5, $6, $7)
+      RETURNING *;
+    `, [req.body.name, req.body.price, req.body.order_quantity, req.body.description, req.body.img_url, req.body.created_at, req.body.order_date])
+      .then((result) => {
+        res.status(201).json(result.rows[0]);
+      });
+  });
+
   return router;
 };
