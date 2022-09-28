@@ -44,30 +44,29 @@ import NotFoundPage from './pages/404';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { isChatBoxVisible: false};
+    this.state = { isChatBoxVisible: false };
     this.toggleChatBoxVisible = this.toggleChatBoxVisible.bind(this);
-    this.test = () => {alert("This is the Alert!!")};
+    this.test = () => { alert("This is the Alert!!") };
   }
-  
+
 
   toggleChatBoxVisible = () => {
     this.setState({ isChatBoxVisible: !this.state.isChatBoxVisible })
   }
-  
+
   // test = () => {
   //   alert("This is the Alert!!");
   // }
-  
-  
+
+
   render() {
     return (
 
-      
-        <Router>
+
+      <Router>
+        <Container maxWidth="false" sx={{ height: "100vh" }}>
           <Switch>
-            <Container maxWidth="false" sx={{height:"100vh"}}>
-              <Approute exact path="/" component={HomePage} sx={{margin:"100px"}}/>
-            </Container>
+            <Approute exact path="/" component={HomePage} sx={{ margin: "100px" }} />
             {/* <Approute exact path="/clientRegister" component={clientRegister} />
             <Approute exact path="/lawyerRegister" component={lawyerRegister} />
             <Approute exact path="/lawyerHome" component={LawyerHome} />
@@ -96,15 +95,16 @@ class App extends Component {
             <Approute exact path="/lawyerProfilePage" component={LawyerProfilePage} />
             <Approute exact path="/lawyerhomepage/:lawType" component={LawyerHomePage} />
             <Approute exact path="/lawyerprofilePage/:lawyer_id" component={LawyerProfilePage} />
-            <Route exact path="/message" component={MessageChatBox} /> */}
+          <Route exact path="/message" component={MessageChatBox} /> */}
 
             <Approute component={NotFoundPage} />
             <Redirect to="/404" />
           </Switch>
-        </Router>
-      
-       
-     
+        </Container>
+      </Router>
+
+
+
 
     );
   }
