@@ -23,11 +23,17 @@ const OrderItem = (props) => {
     setOpen(false);
   };
 
+  const formatDate = (string) => {
+    const date = new Date(string);
+    const day = date.toLocaleString(window.navigator.language, {weekday: 'long'});
+    return `${day}, ${date.toLocaleDateString()}`
+  };
+
   return (
     <Card sx={{ width: 240, height: 400, margin: 1, borderRadius: 3 }}>
       <CardHeader
         title={orderItem.name}
-        subheader={orderItem.date}
+        subheader={formatDate(orderItem.order_date)}
         action={
           <IconButton aria-label="settings" size="large" sx={{ backgroundColor: "red"}}>
             <Typography variant="h6" color="white">
