@@ -47,7 +47,7 @@ const OrderItem = (props) => {
         height="160"
         image={orderItem.img_url}
       />
-      <CardContent sx={{ paddingBottom: "unset" }}>
+      <CardContent sx={{ paddingBottom: "unset", paddingTop: "unset", marginTop: 2, height: 84, overflowY: "auto", '&::-webkit-scrollbar': { display: "none" } }}>
         <Typography variant="body2" color="text.secondary">
           {orderItem.description}
         </Typography>
