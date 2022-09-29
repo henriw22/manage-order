@@ -30,7 +30,7 @@ const OrderItem = (props) => {
   };
 
   return (
-    <Card sx={{ width: 240, height: 400, margin: 1, borderRadius: 3 }}>
+    <Card sx={{ width: 256, height: 400, margin: 1, borderRadius: 3 }}>
       <CardHeader
         title={orderItem.name}
         subheader={formatDate(orderItem.order_date)}
