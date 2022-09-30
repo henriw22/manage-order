@@ -1,4 +1,4 @@
-# Lawyer Up API
+# Open Order API
 
 ## Setup
 
@@ -47,7 +47,7 @@ npm run error
 
 ### Days
 
-`GET /api/days`
+`GET /api/users`
 
 Response
 
@@ -55,39 +55,38 @@ Response
 [
   {
     "id": 1,
-    "name": "Monday",
-    "appointments": [1, 2],
-    "interviewers": [1, 2],
-    "spots": 0
+    "name": "Egg Eggerson",
+    "email": "friedEgg99@hotmail.com",
+    "phone": "604789456",
+    "password": "password"
   }
 ]
 ```
 
 ### Appointments
 
-`GET /api/appointments`
+`GET /api/order_items`
 
 Response:
 
 ```json
-{
-  "1": {
+[
+  {
     "id": 1,
-    "time": "12pm",
-    "interview": {
-      "student": "Lydia Miller-Jones",
-      "interviewer": 1
-    }
-  },
-  "2": {
-    "id": 2,
-    "time": "1pm",
-    "interview": {
-      "student": "Archie Cohen",
-      "interviewer": 2
-    }
+    "name": "Mie Ayam",
+    "price": 15,
+    "order_quantity": 50,
+    "description": "Mie Ayam is a common Indonesian dish of seasoned yellow wheat noodles topped with diced chicken meat",
+    "img_url": "/images/mie_ayam.jpeg",
+    "created_at": "2022-08-01T17:00:00.000Z",
+    "order_date": "2022-10-01T17:00:00.000Z",
+    "locations": [
+      "Lougheed at 2 PM",
+      "Pick Up at 4 PM",
+      "Pick Up at 3 PM"
+    ]
   }
-}
+]
 ```
 
 `PUT /api/appointments/:id`
