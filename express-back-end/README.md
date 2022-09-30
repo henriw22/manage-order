@@ -8,7 +8,7 @@ Install dependencies with `npm install`.
 
 Use the `psql -U development` command to login to the PostgreSQL server with the username `development` and the password `development`. This command **MUST** be run in a vagrant terminal, we are using the PostgreSQL installation provided in the vagrant environment.
 
-Create a database with the command `CREATE DATABASE manage_order;`.
+Create a database with the command `CREATE DATABASE open_order;`.
 
 Copy the `.env.example` file to `.env.development` and fill in the necessary PostgreSQL configuration. The `node-postgres` library uses these environment variables by default.
 

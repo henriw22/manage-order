@@ -14,13 +14,6 @@ const users = require("./routes/users");
 const orders = require("./routes/orders");
 const orderItems = require("./routes/order_items");
 const locations = require("./routes/locations");
-const lawyers = require("./routes/clients");
-const cases = require("./routes/cases");
-const closedcases = require("./routes/closedcases");
-const opencases = require("./routes/opencases");
-const casesForSameLawyer = require("./routes/casesForSameLawyer");
-const specialities = require("./routes/specialized");
-const reviews = require("./routes/reviews");
 
 
 function read(file) {
@@ -47,15 +40,8 @@ module.exports = function application(ENV) {
   app.use("/api", orders(db));
   app.use("/api", orderItems(db));
   app.use("/api", locations(db));
-  app.use("/api", lawyers(db));
-  app.use("/api", cases(db));
-  app.use("/api", casesForSameLawyer(db));
-  app.use("/api", specialities(db));
-  app.use("/api", reviews(db));
-  app.use("/api", closedcases(db));
-  app.use("/api", opencases(db));
 
-  
+
   app.use('/api/data', (req, res) => res.json({
     message: "Seems to work!",
   }));
@@ -84,7 +70,7 @@ module.exports = function application(ENV) {
       });
   }
 
-  app.close = function() {
+  app.close = function () {
     return db.end();
   };
 
