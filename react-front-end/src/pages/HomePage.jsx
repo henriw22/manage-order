@@ -7,7 +7,7 @@ import OrderItemList from "../components/OpenOrder/OrderItemList";
 
 const HomePage = () => {
   return (
-    <Stack flexDirection="row" height="100vh">
+    <Stack flexDirection="row">
       {/* <OrderForm /> */}
       {/* <OrderItem /> */}
       <OrderItemList />

@@ -11,6 +11,7 @@ import {
 
 import HomePage from './pages/HomePage';
 import NotFoundPage from './pages/404';
+import NavBar from './components/OpenOrder/NavBar';
 //import MessageChatBox from './components/message';
 
 
@@ -37,7 +38,8 @@ class App extends Component {
 
 
       <Router>
-        <Container maxWidth="false" sx={{ height: "100vh" }}>
+        <NavBar />
+        <Container maxWidth="false">
           <Switch>
             <Approute exact path="/" component={HomePage} sx={{ margin: "100px" }} />
           {/* <Route exact path="/message" component={MessageChatBox} /> */}
