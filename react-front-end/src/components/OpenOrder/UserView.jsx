@@ -10,6 +10,8 @@ const UserView = () => {
     <Stack width="50%" alignItems="center" margin="1em">
       <h1>Welcome to Open Order</h1>
       <OrderItemForm />
+      {/* <SignIn /> */}
+      {/* <SignUp /> */}
     </Stack>
   );
 };

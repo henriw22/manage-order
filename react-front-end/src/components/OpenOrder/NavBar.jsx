@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   AppBar,
   Toolbar,
@@ -9,6 +9,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import AccountCircle from '@mui/icons-material/AccountCircle'
 
 const NavBar = () => {
+  const [user, setUser] = useState(null);
   return (
     <AppBar position="static" sx={{ height: '3em' }}>
       <Toolbar variant="dense">
@@ -18,15 +19,19 @@ const NavBar = () => {
         <Typography variant="h6" color="inherit" component="div" flexGrow={1}>
           OpenOrder
         </Typography>
-        <IconButton
-          size="large"
-          aria-label="account of current user"
-          aria-controls="menu-appbar"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <AccountCircle />
-        </IconButton>
+        {user ?
+          <IconButton
+            size="large"
+            aria-label="account of current user"
+            aria-controls="menu-appbar"
+            aria-haspopup="true"
+            color="inherit"
+          >
+            <AccountCircle />
+          </IconButton>
+          :
+          <Typography variant="h6" color="inherit">Login</Typography>
+        }
       </Toolbar>
     </AppBar>
   );
