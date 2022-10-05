@@ -30,7 +30,7 @@ const NavBar = () => {
             <AccountCircle />
           </IconButton>
           :
-          <Typography variant="h6" color="inherit">Login</Typography>
+          <Typography variant="h6" color="inherit" onClick={() => console.log('test')}>Login</Typography>
         }
       </Toolbar>
     </AppBar>
