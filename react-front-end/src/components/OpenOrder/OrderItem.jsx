@@ -29,8 +29,14 @@ const OrderItem = (props) => {
     return `${day}, ${date.toLocaleDateString()}`
   };
 
+  const alertColor = (num) => {
+    if (num < 40) {
+      return '0 0 10px red'
+    }
+  }
+
   return (
-    <Card sx={{ width: 256, height: 400, margin: 1, borderRadius: 3 }}>
+    <Card sx={{ width: 256, height: 400, margin: 1, borderRadius: 3, boxShadow: alertColor(orderItem.order_quantity) }}>
       <CardHeader
         title={orderItem.name}
         subheader={formatDate(orderItem.order_date)}
