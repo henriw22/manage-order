@@ -33,6 +33,7 @@ const OrderItemForm = () => {
 
   const handlePickupChange = (i) => (e) => {
     let formData = [...pickup];
+    console.log('E', e.target.value)
     formData[i][e.target.name] = e.target.value;
     setPickup(formData);
   }

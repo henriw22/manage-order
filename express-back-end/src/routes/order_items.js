@@ -27,10 +27,13 @@ module.exports = db => {
         const locations = req.body.locations;
 
         locations.map((location) => {
+          const time = location.time.split(':');
+          const isAm = (time[0] / 12) < 1;
+          const timeString = `${time[0] % 12}:${time[1]} ${isAm ? 'AM' : 'PM'}`;
           db.query(`
           INSERT INTO locations (item_id, name)
           VALUES ($1, $2);
-        `, [id, `${location.location} at ${location.time}`])
+        `, [id, `${location.location} at ${timeString}`])
             .then(() => {
               res.status(201).send('successful!');
             });
